@@ -34,6 +34,10 @@
                   <select class="form-control select2 select2-hidden-accessible" id="medicine" tabindex="-1" name="patient_id" aria-hidden="true">
                      <option>{{ __('sentence.Select Patient') }}</option>
                      @foreach($patients as $patient)
+                        @if ($patient_id == $patient->id)
+                           <option value="{{ $patient->id }}" selected>{{ $patient->name }}</option>
+                           @continue
+                        @endif
                      <option value="{{ $patient->id }}">{{ $patient->name }}</option>
                      @endforeach
                   </select>

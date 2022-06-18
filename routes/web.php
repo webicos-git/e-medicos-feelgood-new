@@ -37,6 +37,7 @@ Route::get('/doctor/edit/{id}', 'DoctorController@create')->where('id', '[0-9]+'
 Route::post('/doctor/create', 'DoctorController@store')->name('doctor.store');
 
 //Appointments
+Route::get('/appointment/create/{patient_id?}', 'AppointmentController@create')->name('appointment.create');
 Route::get('/appointment/create', 'AppointmentController@create')->name('appointment.create');
 Route::post('/appointment/create', 'AppointmentController@store')->name('appointment.store');
 Route::get('/appointment/all', 'AppointmentController@all')->name('appointment.all');
@@ -62,6 +63,8 @@ Route::get('/treatment/all', 'TreatmentController@all')->name('treatment.all');
 Route::get('/treatment/delete/{id}', 'TreatmentController@destroy')->where('id', '[0-9]+');
 
 //Prescriptions
+Route::get('/prescription/create/{patient_id?}', 'PrescriptionController@create')->name('prescription.create');
+
 Route::get('/prescription/create', 'PrescriptionController@create')->name('prescription.create');
 Route::post('/prescription/create', 'PrescriptionController@store')->name('prescription.store');
 Route::get('/prescription/all', 'PrescriptionController@all')->name('prescription.all');

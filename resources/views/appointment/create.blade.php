@@ -34,9 +34,14 @@
                <div class="col-md-4 col-sm-12">
                   <div class="form-group">
                      <label for="exampleInputEmail1">{{ __('sentence.Patient') }} </label>
-                     <select class="form-control patient_name" id="patient_name">
+                     <select class="form-control patient_name" id="patient_name" name="patient_id">
                         <option>{{ __('sentence.Select Patient') }}</option>
                         @foreach($patients as $patient)
+                        @if ($patient_id  == $patient->id)
+                           <option value="{{ $patient->id }}" selected>{{ $patient->name }}</option>
+                           @continue
+                        @endif  
+
                         <option value="{{ $patient->id }}">{{ $patient->name }}</option>
                         @endforeach
                      </select>

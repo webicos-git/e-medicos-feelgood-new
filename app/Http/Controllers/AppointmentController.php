@@ -16,11 +16,13 @@ class AppointmentController extends Controller
         $this->middleware('auth');
     }
 
-    public function create()
+    public function create($patient_id = null)
     {
         $patients = Patient::all();
-        return view('appointment.create', ['patients' => $patients]);
+        return view('appointment.create', ['patients' => $patients,'patient_id' => $patient_id]);
     }
+
+    
 
     public function checkslots($date)
     {

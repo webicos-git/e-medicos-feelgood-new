@@ -20,12 +20,12 @@ class PrescriptionController extends Controller
     }
 
 
-    public function create()
+    public function create($patient_id = null)
     {
         $medicines = Medicine::all();
         $patients = Patient::all();
         $treatments = Treatment::all();
-        return view('prescription.create', ['medicines' => $medicines, 'patients' => $patients, 'treatments' => $treatments]);
+        return view('prescription.create', ['medicines' => $medicines, 'patients' => $patients, 'treatments' => $treatments,'patient_id'=>$patient_id]);
     }
 
     public function store(Request $request)

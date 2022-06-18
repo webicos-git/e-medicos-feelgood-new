@@ -67,7 +67,12 @@
                           
                         </div>
                         <div class="tab-pane fade" id="appointements" role="tabpanel" aria-labelledby="appointements-tab">
-                          <table class="table">
+                        <div class="row my-2">
+                            <div class="col-12">
+                               <a href="{{ url('/appointment/create/'.$patient->id) }}" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus"></i>Create Appointment</a>
+                            </div>
+                         </div>  
+                        <table class="table">
                             <tr>
                               <td align="center">Id</td>
                               <td align="center">{{ __('sentence.Date') }}</td>
@@ -147,7 +152,12 @@
                         </div>
 
                         <div class="tab-pane fade" id="prescriptions" role="tabpanel" aria-labelledby="prescriptions-tab">
-                          <table class="table">
+                        <div class="row my-2">
+                            <div class="col-12">
+                               <a href="{{ url('/prescription/create/'.$patient->id) }}" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus"></i>Create Prescription</a>
+                            </div>
+                         </div>   
+                        <table class="table">
                             <tr>
                               <td align="center">{{ __('sentence.Reference') }}</td>
                               <td align="center">{{ __('sentence.Date') }}</td>
